@@ -1,0 +1,28 @@
+* {
+    border: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    min-height: 100vh;
+
+    display: grid;
+    grid-template: 1fr 6fr / 1fr 4fr;
+}
+
+div {
+    border: 1px solid blue;
+}
+
+.sidebar {
+    grid-row: 1 / 3;
+
+    display: grid;
+    grid-template-rows: 20% 20% 20%;
+    gap: 30px;
+}
+
+.sidebar > div {
+    height: min-content;
+}

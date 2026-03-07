@@ -16,7 +16,7 @@
 }
 
 .container {
-    min-height: 100vh;
+    height: 100vh;
 
     font-family: Roboto, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 
@@ -111,12 +111,13 @@
 }
 
 div.user {
-    justify-self: center;
+    justify-self: right;
+    padding-right: 5%;
     grid-template-columns: min-content min-content 1fr;
 }
 
 .user span {
-    font-size: 1.5em;
+    font-size: min(1.5em, 2vw);
     font-weight: bold;
 }
 
@@ -152,6 +153,7 @@ div.user {
 }
 
 .buttons {
+    justify-self: right;
     justify-items: center;
 }
 
@@ -174,13 +176,13 @@ div.user {
     padding: 20px 20px 50px 20px;
     display: grid;
     grid-template: min-content 1fr min-content 1fr / 6fr 2fr;
-    gap: 10px;
+    gap: 18px;
 
     .project-header {
         grid-column: 1 / 2;
     }
 
-    .project-cards {
+    .project-cards-container {
         grid-area: 2 / 1 / 5 / 2;
     }
 
@@ -197,6 +199,7 @@ div.user {
 .project-cards-container .card {
     border-radius: 10px;
     box-shadow: var(--black-shadow);
+    background-color: white;
 }
 
 .content .content-header {
@@ -204,7 +207,6 @@ div.user {
 }
 
 .announcements {
-    background-color: white;
     display: grid;
     padding: 20px;
 }
@@ -228,7 +230,6 @@ div.user {
 
 .trending {
     padding: 20px;
-    background-color: white;
 
     display: grid;
     gap: 15px;
@@ -265,4 +266,38 @@ div.user {
     .role {
         align-self: start;
     }
+}
+
+.project-cards-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.card {
+    display: grid;
+    grid-template: min-content 1fr 30px / 8px 1fr;
+    overflow: hidden;
+
+    background: linear-gradient(to right, orange 8px, transparent 8px);
+
+    padding: 40px 20px;
+
+    h3, p, div {
+        grid-column: 2;
+    }
+}
+
+.card div {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: min-content;
+    gap: 30px;
+    justify-self: right;
+
+    padding-right: 20px;
+}
+
+.card svg {
+    height: 100%;
 }
